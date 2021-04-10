@@ -1,6 +1,6 @@
 import React from 'react'
 import AuxHoc from '../../hoc/AuxHoc'
-import BurgerIngredient from '../Burger/BurgerIngredient/BurgerIngredient'
+
 import './Layout.css'
 
 const layout = (props)=>(
