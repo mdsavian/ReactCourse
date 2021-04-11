@@ -2,11 +2,11 @@ import React from 'react'
 import AuxHoc from '../../../hoc/AuxHoc'
 
 const orderSummary = (props)=>{
-    const ingredientsSummary = Object.keys(props.ingredientes).map(igKey=>{
+    const ingredientsSummary = Object.keys(props.ingredients).map(igKey=>{
         return (
-        <li>
+        <li key={igKey}>
             <span style={{textTransform:'capitalize'}}>{igKey}</span>: 
-            {props.ingredientes[igKey]}
+            {props.ingredients[igKey]}
             </li>
             )
     })
@@ -17,7 +17,7 @@ const orderSummary = (props)=>{
             <ul>
                 {ingredientsSummary}
             </ul>
-            <p>Continue para a compra?</p>
+            <p>Continuar para a compra?</p>
         </AuxHoc>
     )
 }
