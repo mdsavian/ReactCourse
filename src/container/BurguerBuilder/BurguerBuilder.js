@@ -2,20 +2,22 @@ import React, {Component} from 'react'
 import AuxHoc from '../../hoc/AuxHoc'
 import Burger from '../../components/Burger/Burger'
 import BuildControls from '../../components/BuildControls/BuildControls'
+import Modal from '../../components/UI/Modal/Modal'
+import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary'
 
 const INGREDIENTS_PRICE = {
-    salad:0.5,
+    salada:0.5,
     bacon:1,
-    cheese:0.7,
-    meat:1.3
+    queijo:0.7,
+    carne:1.3
 }
 class BurguerBuilder extends Component{
     state ={
         ingredients:{
-            salad:0,
+            salada:0,
             bacon:0,
-            cheese:0,
-            meat:0
+            queijo:0,
+            carne:0
         },
         totalPrice:4,
         purchasable:false
@@ -73,6 +75,9 @@ class BurguerBuilder extends Component{
         }
         return (
             <AuxHoc>
+                <Modal>
+                    <OrderSummary ingredients={this.state.ingredients}/>
+                </Modal>
                 <Burger ingredients={this.state.ingredients}/>   
                 <BuildControls 
                  addIngredients={this.addIngredientsHandler}

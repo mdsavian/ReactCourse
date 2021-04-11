@@ -14,13 +14,13 @@ const burger = (props)=>{
     
 if (transformedIngredients.length === 0)
 {
-    transformedIngredients = <p>Please start adding ingredients!</p>
+    transformedIngredients = <p>Por favor adicione os ingredientes!</p>
 }
     return (
     <div className='Burger'>
-        <BurgerIngredient type="bread-top"/>
+        <BurgerIngredient type="pao-cima"/>
         {transformedIngredients}
-        <BurgerIngredient type="bread-bottom"/>
+        <BurgerIngredient type="pao-baixo"/>
 
     </div>);
 }
