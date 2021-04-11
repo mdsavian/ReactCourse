@@ -1,9 +1,11 @@
 import React from 'react'
+import AuxHoc from '../../../hoc/AuxHoc'
+import Backdrop from '../Backdrop/Backdrop'
 import './Modal.css'
 
-const modal = (props)=>{
-    return (
-
+const modal = (props)=>(
+    <AuxHoc>
+        <Backdrop show={props.show} clicked={props.closeModal}/>
         <div className="Modal"
         style=
         {{
@@ -12,6 +14,7 @@ const modal = (props)=>{
         }}>
             {props.children}
         </div>
-    )
-}
+    </AuxHoc>
+)
+
 export default modal

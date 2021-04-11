@@ -69,6 +69,15 @@ class BurguerBuilder extends Component{
         this.setState({purchasing:true})
     }
 
+    cancelPurchasingHandler = ()=>{
+        this.setState({purchasing:false})
+    }
+
+    finishPurchasingHandler = ()=>
+    {
+        alert('finish him')
+    }
+
     render (){
 
         const disabledInfo ={
@@ -80,8 +89,13 @@ class BurguerBuilder extends Component{
         }
         return (
             <AuxHoc>
-                <Modal show={this.state.purchasing}>
-                    <OrderSummary ingredients={this.state.ingredients}/>
+                <Modal show={this.state.purchasing} closeModal={this.cancelPurchasingHandler}>
+                    <OrderSummary 
+                        ingredients={this.state.ingredients} 
+                        cancelPurchasing={this.cancelPurchasingHandler}
+                        finishPurchasing={this.finishPurchasingHandler}
+                        totalPrice={this.state.totalPrice}
+                    />
                 </Modal>
                 <Burger ingredients={this.state.ingredients}/>   
                 <BuildControls 
