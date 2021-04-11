@@ -1,4 +1,4 @@
-import Layout from "./components/Layout/Layout";
+import Layout from "./hoc/Layout/Layout";
 import BurguerBuilder from "./container/BurguerBuilder/BurguerBuilder";
 
 function App() {

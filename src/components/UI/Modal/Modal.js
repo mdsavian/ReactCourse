@@ -1,20 +1,29 @@
-import React from 'react'
-import AuxHoc from '../../../hoc/AuxHoc'
-import Backdrop from '../Backdrop/Backdrop'
-import './Modal.css'
+import React, { Component } from "react";
+import AuxHoc from "../../../hoc/AuxHoc/AuxHoc";
+import Backdrop from "../Backdrop/Backdrop";
+import "./Modal.css";
 
-const modal = (props)=>(
-    <AuxHoc>
-        <Backdrop show={props.show} clicked={props.closeModal}/>
-        <div className="Modal"
-        style=
-        {{
-            transform: props.show ? 'translateY(0)':'translateY(-100vh)',
-            opacity: props.show ? '1' : '0'
-        }}>
-            {props.children}
+class Modal extends Component {
+  shouldComponentUpdate(nextProps, nextState) {
+      return nextProps.show !== this.props.show
+  }
+
+  render() {
+    return (
+      <AuxHoc>
+        <Backdrop show={this.props.show} clicked={this.props.closeModal} />
+        <div
+          className="Modal"
+          style={{
+            transform: this.props.show ? "translateY(0)" : "translateY(-100vh)",
+            opacity: this.props.show ? "1" : "0",
+          }}
+        >
+          {this.props.children}
         </div>
-    </AuxHoc>
-)
+      </AuxHoc>
+    );
+  }
+}
 
-export default modal
+export default Modal;

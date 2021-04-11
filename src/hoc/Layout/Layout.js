@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import AuxHoc from '../../hoc/AuxHoc'
+import AuxHoc from '../AuxHoc/AuxHoc'
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar'
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer'
 
@@ -8,7 +8,7 @@ import './Layout.css'
 class Layout extends Component {
 
     state = {
-        showSideDrawer:true
+        showSideDrawer:false
     }
 
     sideDrawerCloseHandler = ()=>{

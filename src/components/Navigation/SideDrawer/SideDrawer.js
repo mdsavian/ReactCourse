@@ -1,7 +1,7 @@
 import React from 'react'
 import Logo from '../../Logo/Logo'
 import NavigationItems from '../NavigationItems/NavigationItems'
-import AuxHoc from '../../../hoc/AuxHoc'
+import AuxHoc from '../../../hoc/AuxHoc/AuxHoc'
 import BackDrop from '../../UI/Backdrop/Backdrop'
 import "./SidreDrawer.css"
 
