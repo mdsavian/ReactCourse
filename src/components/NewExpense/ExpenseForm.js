@@ -4,19 +4,18 @@ import "./ExpenseForm.css";
 const ExpenseForm = (props) => {
   const [newExpense, setNewExpense] = useState({
     title: "",
-    price: "",
+    price: 0,
     date: "",
   });
 
-
-  const [dateOnInput, setDateOnInput] = useState('')
+  const [dateOnInput, setDateOnInput] = useState("");
 
   const titleChangeHandler = (event) => {
     setNewExpense({ ...newExpense, title: event.target.value });
   };
 
-  const dateChangeHandler = (event) => {    
-    setDateOnInput(new Date(event.target.value).toISOString().split("T")[0])
+  const dateChangeHandler = (event) => {
+    setDateOnInput(new Date(event.target.value).toISOString().split("T")[0]);
     setNewExpense({
       ...newExpense,
       date: new Date(event.target.value),
@@ -24,14 +23,14 @@ const ExpenseForm = (props) => {
   };
 
   const priceChangeHandler = (event) => {
-    setNewExpense({ ...newExpense, price: event.target.value });
+    setNewExpense({ ...newExpense, price: +event.target.value });
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
     props.saveExpense(newExpense);
+    props.setShowAddNewExpense(false);
   };
-
   return (
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
@@ -64,7 +63,10 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button type="submit">Adicionar Nova Conta</button>
+        <button type="button" onClick={() => props.setShowAddNewExpense(false)}>
+          Cancelar
+        </button>
+        <button type="submit">Salvar</button>
       </div>
     </form>
   );

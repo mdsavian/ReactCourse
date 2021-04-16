@@ -6,27 +6,27 @@ const App = () => {
   const [expensiveItems, setExpensiveItems] = useState([
     {
       id: "e1",
-      date: new Date(2021, 4, 13),
+      date: new Date(2019, 4, 13),
       title: "Conta do carro",
-      price: "295,67",
+      price: 295.67,
     },
     {
       id: "e2",
-      date: new Date(2021, 3, 12),
+      date: new Date(2020, 3, 12),
       title: "Conta da páscoa",
-      price: "95,99",
+      price: 95.99,
     },
     {
       id: "e3",
       date: new Date(2021, 1, 1),
       title: "Conta do ano novo",
-      price: "400,00",
+      price: 400.00,
     },
     {
       id: "e4",
-      date: new Date(2021, 4, 12),
+      date: new Date(2019, 4, 12),
       title: "Conta de casa",
-      price: "650,77",
+      price: 650.77,
     },
   ])
 
