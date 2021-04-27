@@ -2,7 +2,6 @@ import ReactDOM from "react-dom";
 import classes from "./Modal.module.css";
 
 const BackDropOverlay = (props) => {
-  console.log(props);
   return <div className={classes.backdrop} onClick={props.closeCart} />;
 };
 

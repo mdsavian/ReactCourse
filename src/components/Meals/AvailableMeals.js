@@ -9,7 +9,7 @@ const AvailableMeals = (props) => {
       <Card>
         <ul>
           {DUMMY_MEALS.map((meal) => {
-            return <MealItem key={meal.id} mealData={meal} />;
+            return <MealItem id={meal.id} key={meal.id} mealData={meal} />;
           })}
         </ul>
       </Card>
