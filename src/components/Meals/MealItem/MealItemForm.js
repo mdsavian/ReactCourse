@@ -16,7 +16,7 @@ const MealItemForm = (props) => {
       return;
     }
 
-    props.addOnCard(enteredAmount);
+    props.addOnCard(enteredAmountNumber);
   };
 
   return (
